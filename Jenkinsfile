@@ -1,10 +1,14 @@
+#!groovy
+
 pipeline {
    agent none
    stages {
-      stage('Static HTML') {
-         steps {
-            echo 'Static HTML'
-         }
-      }
+      stage 'Build'
+         echo 'Building the Software'
+      stage name: 'Test'
+         echo 'Testing the software'
+
+      stage name: 'Deploy'
+         echo 'Deploying to production.'
    }
 }
